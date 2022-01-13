@@ -44,15 +44,15 @@ class View {
     userCard.append(deleteCard)
     this.savedUsersWrapper.append(userCard)
 
-    console.log('my name is: ', userData.name);
+    //console.log('my name is: ', userData.name);
     return deleteCard
   }
 }
 
 class Search {
+  
   constructor (view) {
     this.view = view
-
     this.view.searchInput.addEventListener('keyup', this.debounce(this.searchUsers.bind(this), 500))
   }
 
@@ -70,7 +70,7 @@ class Search {
       .then(res => {
         console.log(res)
         res.items.forEach(user => {
-          console.log(user.name);
+          //console.log(user.name);
           const userElement = this.view.createUsers(user)
           userElement.onclick = () => {
             const userCard = this.view.addUsers(user)
